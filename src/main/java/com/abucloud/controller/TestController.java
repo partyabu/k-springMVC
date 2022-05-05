@@ -29,4 +29,11 @@ public class TestController {
     public User queryUser() {
         return new User();
     }
+
+    @RequestMapping("/testpojo")
+    public String testPOJO(User user){
+        System.out.println(user);
+        return "success";
+    }
+
 }

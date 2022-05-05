@@ -7,10 +7,9 @@
     <servlet>
         <servlet-name>springMVC</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        <!--指定spring的配置文件位置-->
+        <!--指定spring的配置文件位置，此处指定类路径-->
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <!--要指定类路径-->
             <param-value>classpath:bean.xml</param-value>
         </init-param>
         <!--容器启动时第一时间加载DispatcherServlet-->

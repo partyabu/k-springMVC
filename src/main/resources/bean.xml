@@ -8,19 +8,4 @@
     <!--扫描指定的包到容器中-->
     <context:component-scan base-package="com.abucloud"/>
 
-    <mvc:annotation-driven>
-        <mvc:message-converters>
-            <!-- 处理响应中文内容乱码 -->
-            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
-                <property name="defaultCharset" value="UTF-8"/>
-                <property name="supportedMediaTypes">
-                    <list>
-                        <value>text/html</value>
-                        <value>application/json</value>
-                    </list>
-                </property>
-            </bean>
-        </mvc:message-converters>
-    </mvc:annotation-driven>
-
 </beans>

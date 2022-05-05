@@ -16,6 +16,7 @@
 
     <dependencies>
 
+        <!--包含了spring核心依赖包以及web包-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
