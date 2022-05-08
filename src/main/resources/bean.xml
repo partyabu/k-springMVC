@@ -5,7 +5,21 @@
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <!--扫描指定的包到容器中-->
+    <!--扫描指定包下的标注的类到容器中，成为一个组件-->
     <context:component-scan base-package="com.abucloud"/>
+
+    <!--springMVC三大组件：视图解析器、处理器映射器、处理器适配器-->
+
+    <!--配置处理器映射器、处理器适配器-->
+    <mvc:annotation-driven/>
+
+    <!--配置视图解析器-->
+    <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!--页面所在目录-->
+        <property name="prefix" value="/WEB-INF/pages/"/>
+        <!--页面后缀-->
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
 
 </beans>
