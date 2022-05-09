@@ -1,9 +1,11 @@
 package com.abucloud.controller;
 
 import com.abucloud.dto.User;
+import com.abucloud.exception.CustomException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.ServletException;
@@ -30,11 +32,21 @@ public class TestController {
         return "ok";
     }
 
+    /**
+     * 使用对象接收路径查询字符串
+     *
+     * @param user
+     */
     @PostMapping("user")
     public void queryUser(User user) {
         System.out.println(user);
     }
 
+    /**
+     * 获取请求体的参数
+     *
+     * @param userStr
+     */
     @PostMapping("body")
     public void queryUser(@RequestBody String userStr) {
         System.out.println(userStr);
@@ -97,6 +109,25 @@ public class TestController {
     @PutMapping("userJson")
     public User toJson(@RequestBody User user) {
         return user;
+    }
+
+    /**
+     * 文件上传
+     * <p>
+     * 前端：
+     * 必须是post请求，content-type是multipart/form-data
+     * input标签type是file类型
+     * <p>
+     * 后台：
+     * 表单参数名要和handler参数名一致，可以使用@RequestParam接收
+     *
+     * @param fileName
+     * @return
+     */
+    @ResponseBody
+    @PostMapping("file")
+    public String uploadFile(MultipartFile fileName) {
+            throw new CustomException("异常");
     }
 
 }

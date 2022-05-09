@@ -10,7 +10,7 @@
 
     <!--springMVC三大组件：视图解析器、处理器映射器、处理器适配器-->
 
-    <!--配置处理器映射器、处理器适配器-->
+    <!--开启springMVC注解，本质上是配置处理器映射器、处理器适配器-->
     <mvc:annotation-driven/>
 
     <!--配置视图解析器-->
@@ -21,5 +21,10 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <!--配置文件解析器，id必须叫multipartResolver-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- 设置上传文件的最大尺寸为 5MB -->
+        <property name="maxUploadSize" value="5242880"/>
+    </bean>
 
 </beans>
