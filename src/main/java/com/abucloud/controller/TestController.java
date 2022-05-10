@@ -115,11 +115,10 @@ public class TestController {
      * 文件上传
      * <p>
      * 前端：
-     * 必须是post请求，content-type是multipart/form-data
-     * input标签type是file类型
+     * 1.post请求方式；2.content-type是multipart/form-data；3.input标签type是file类型
      * <p>
      * 后台：
-     * 表单参数名要和handler参数名一致，可以使用@RequestParam接收
+     * 表单文件参数名要和handler参数名一致，不一致可以使用@RequestParam接收，也可以使用@RequestPart()接收
      *
      * @param fileName
      * @return
@@ -127,7 +126,21 @@ public class TestController {
     @ResponseBody
     @PostMapping("file")
     public String uploadFile(MultipartFile fileName) {
-            throw new CustomException("异常");
+        throw new CustomException("异常");
+    }
+
+    /**
+     * 测试@RequestPart()
+     *
+     * @param file
+     * @return
+     */
+    @ResponseBody
+    @PostMapping("file02")
+    public String uploadFile02(@RequestPart("file") MultipartFile file, @RequestPart("user") User user) {
+        System.out.println(user);
+        System.out.println(file.getName());
+        return "ok";
     }
 
 }
