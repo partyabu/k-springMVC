@@ -27,4 +27,22 @@
         <property name="maxUploadSize" value="5242880"/>
     </bean>
 
+    <!--配置拦截器-->
+    <mvc:interceptors>
+
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <!--<mvc:exclude-mapping path=""/>-->
+            <bean id="loginInterceptor" class="com.abucloud.interceptor.LoginInterceptor"/>
+        </mvc:interceptor>
+
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <!--<mvc:exclude-mapping path=""/>-->
+            <bean id="loginInterceptor2" class="com.abucloud.interceptor.Login2Interceptor"/>
+        </mvc:interceptor>
+
+    </mvc:interceptors>
+
+
 </beans>
