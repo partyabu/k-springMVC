@@ -33,7 +33,7 @@
         <!--指定spring的配置文件位置-->
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:bean.xml</param-value>
+            <param-value>classpath:springMVC.xml</param-value>
         </init-param>
         <!--容器启动时加载DispatcherServlet和指定的spring配置文件-->
         <load-on-startup>1</load-on-startup>
