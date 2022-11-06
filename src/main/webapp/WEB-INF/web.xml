@@ -4,6 +4,10 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+    <!--web.xml作用-->
+    <!--web.xml文件是用来初始化工程配置信息的，比如说welcome页面，filter，listener，servlet，servlet-mapping，启动加载级别等等，
+    当你的web工程中没用到这些当然也就不需要这个xml文件来配置你的apllication了-->
+
     <!--处理接收页面post请求中文乱码问题-->
     <filter>
         <filter-name>CharacterEncodingFilter</filter-name>
