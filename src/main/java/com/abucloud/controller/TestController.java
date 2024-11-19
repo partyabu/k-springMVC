@@ -38,6 +38,7 @@ public class TestController {
      * @param user
      */
     @PostMapping("user")
+    @ResponseBody
     public void queryUser(User user) {
         System.out.println(user);
     }
